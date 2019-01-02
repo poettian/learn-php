@@ -71,7 +71,7 @@ composer 默认的仓库类型，packagist 就是使用的这种类型。主要�
 
 ##### 使用分支 
 
-如果要使用分支，需要指定 `dev-*`（有时是后缀） 前缀。composer 会克隆相应的仓库到 vendor 目录，而 tag 只是 copy 文件。如果分支使用了 v1 这种类似于标签的命名，那么就需要指定版本约束为：v1.x-dev。 
+如果要使用分支，需要指定 `dev-*`（有时是后缀）前缀。composer 会克隆相应的仓库到 vendor 目录，而 tag 只是 copy 文件。如果分支使用了 v1 这种类似于标签的命名，那么就需要指定版本约束为：v1.x-dev。 
 
 ##### minimum-stability 
 
@@ -114,3 +114,11 @@ self.version 表示主包的版本。
 可以参考： 
 
 https://jaceju.net/2018-11-02-composer-replace/ 
+
+
+
+##### 关于require-dev packages的安装
+
+composer 只会安装项目中主 composer.json 文件中 require-dev packages，项目依赖包中 composer.json 里的 require-dev packages 不会安装。
+
+这主要是因为依赖包中 require-dev 是供开发依赖包使用的，而我们开发项目时只是使用依赖包但不需要开发它们。
