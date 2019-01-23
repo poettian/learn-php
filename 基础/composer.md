@@ -7,6 +7,10 @@ composer
 
 `composer dump-autoload` 和 `composer dump-autoload -o` 的区别是：前者只是根据配置项更新相应的 autoload_* 文件内容，而后者还会自动检索配置项中命名空间对应的目录下的 class 更新到 classmap 中。 
 
+此外，在 composer.json 中配置 `"optimize-autoloader": true` 也可以生成 classmap。
+
+
+
 有一点要注意，配置项中命名空间对应的目录，在项目中是以根路径开始，在包中是以包路径开始的。 
 
 ### lock file 
